@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class TvShowService { //me comunicar com a api
   Future<List<TvShow>> fetchTvShow(String query) async {
     final response = await http.get(
-      Uri.parse('https://www.tvmaze.com/search/shows?q=$query'),
+      Uri.parse('https://api.tvmaze.com/search/shows?q=$query'),
     );
 
     if (response.statusCode == 200) {

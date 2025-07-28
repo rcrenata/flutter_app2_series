@@ -58,8 +58,9 @@ class _TvShowGridState extends State<TvShowGrid> {
                 padding: EdgeInsets.all(8),
                 child: Column(
                   children: [
-                    Text('Título'),
+                    Text(tvShow.name),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.star, color: Colors.amber, size: 18),
                         Text(
