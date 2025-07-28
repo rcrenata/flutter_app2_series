@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:app3_series_api/tv_show_model.dart';
 import 'package:http/http.dart' as http;
 
