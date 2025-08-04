@@ -104,4 +104,3 @@ class TvShowModel extends ChangeNotifier {
     notifyListeners();
   }
 }
-
