@@ -31,7 +31,7 @@ class _TvShowGridState extends State<TvShowGrid> {
         return Stack(
           children: [
             GestureDetector(
-              onTap: () => context.go('/tvshow/{$tvShow.id}'),
+              onTap: () => context.go('/tvshow/${tvShow.id}'),
               child: Card(
                 elevation: 5,
                 margin: EdgeInsets.zero,
@@ -39,7 +39,7 @@ class _TvShowGridState extends State<TvShowGrid> {
                   children: [
                     Expanded(
                       child: ClipRRect(
-                        borderRadius: BorderRadiusGeometry.vertical(
+                        borderRadius: BorderRadius.vertical(
                           top: Radius.circular(20),
                         ),
                         child: Image.network(

@@ -1,7 +1,7 @@
 import 'package:app3_series_api/tv_show_model.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class TvShowScreen extends StatefulWidget {
@@ -101,7 +101,7 @@ class _TvShowScreenState extends State<TvShowScreen> {
                     style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 16),
-                  //Text(tvShow.summary, style: TextStyle(fontSize: 16)),
+                  // Text(tvShow.summary, style: TextStyle(fontSize: 16)),
                   Html(data: tvShow.summary),
                   SizedBox(height: 16),
                   Row(
@@ -111,22 +111,22 @@ class _TvShowScreenState extends State<TvShowScreen> {
                         onPressed: () => context.go('/search'),
                         child: Text('VOLTAR'),
                       ),
-                      SizedBox(width: 16), 
-                      tvShowModel.tvShows.any((show) => show.id == tvShow.id) ?
-                      ElevatedButton(
-                        onPressed: () {
-                          tvShowModel.removeTvShow(tvShow, context);
-                          context.go('/');
-                        },
-                        child: Text('DESFAVORITAR'),
-                      ) :
-                      ElevatedButton(
-                        onPressed: () {
-                          tvShowModel.addTvShow(tvShow, context);
-                          context.go('/');
-                        },
-                        child: Text('FAVORITAR'),
-                      ),
+                      SizedBox(width: 16),
+                      tvShowModel.tvShows.any((show) => show.id == tvShow.id)
+                          ? ElevatedButton(
+                              onPressed: () {
+                                tvShowModel.removeTvShow(tvShow, context);
+                                context.go('/');
+                              },
+                              child: Text('DESFAVORITAR'),
+                            )
+                          : ElevatedButton(
+                              onPressed: () {
+                                tvShowModel.addTvShow(tvShow, context);
+                                context.go('/');
+                              },
+                              child: Text('FAVORITAR'),
+                            ),
                       SizedBox(width: 16),
                     ],
                   ),
