@@ -29,4 +29,4 @@ class _FavTvShowScreenState extends State<FavTvShowScreen> {
       ),
     );
   }
-} //parei a videoaula no minuto 57, 1:17, 1:27, 1:37
+} 
