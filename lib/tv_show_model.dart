@@ -1,4 +1,4 @@
-import 'dart:math';
+//import 'dart:math';
 
 import 'package:app3_series_api/tv_show_service.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +39,14 @@ class TvShowModel extends ChangeNotifier {
 
   final List<TvShow> _tvShows = [];
   List<TvShow> get tvShows => _tvShows;
+
+  Future<TvShow> getTvShowById(int id) async {
+    try {
+      return await _tvShowService.fetchTvShowById(id);
+    } catch (e) {
+      throw Exception('Falha em carregar série: ${e.toString()}');
+    }
+  }
 
   Future<List<TvShow>> searchTvShows(String query) async {
     try {

@@ -1,9 +1,22 @@
 import 'dart:convert';
-
 import 'package:app3_series_api/tv_show_model.dart';
 import 'package:http/http.dart' as http;
 
-class TvShowService { //me comunicar com a api
+class TvShowService {
+ //me comunicar com a api
+
+  Future<TvShow> fetchTvShowById(int id) async {
+    final response = await http.get(
+      Uri.parse('https://api.tvmaze.com/shows/$id'),
+    );
+
+    if (response.statusCode == 200) {
+      return TvShow.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Falha ao carregar série!');
+    }
+  }
+
   Future<List<TvShow>> fetchTvShow(String query) async {
     final response = await http.get(
       Uri.parse('https://api.tvmaze.com/search/shows?q=$query'),
