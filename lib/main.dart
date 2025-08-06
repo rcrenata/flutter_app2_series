@@ -9,6 +9,10 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  // Garante que o Flutter esteja inicializado antes de usar o Provider e o GoRouter.
+  // Isso é necessário para evitar erros de contexto antes da inicialização.
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     MultiProvider(
       providers: [
@@ -21,7 +25,7 @@ void main() {
 }
 
 final GoRouter _router = GoRouter(
-  initialLocation: '/sear',
+  initialLocation: '/',
   routes: [
     ShellRoute(
       builder: (context, state, child) => BaseScreen(child: child),
